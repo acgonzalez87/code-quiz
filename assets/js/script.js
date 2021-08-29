@@ -87,8 +87,7 @@ function compare(event) {
 
   if (questionIndex >= questions.length) {
     quizDone();
-    createDiv.textContent =
-      "End of quiz! " + "You got a score of " + score + "!";
+    createDiv.textContent = "End of quiz! " + "You got " + score + " out of 5!";
   } else {
     render(questionIndex);
   }
@@ -116,7 +115,7 @@ function quizDone() {
     clearInterval(holdInterval);
     createFinalScore.textContent = "Your final score is: " + timeRemaining;
 
-    quizQuestions.appendChild(createP);
+    // quizQuestions.appendChild(createP);
   }
 
   var createInput = document.createElement("input");
@@ -126,7 +125,7 @@ function quizDone() {
 
   quizQuestions.appendChild(createInput);
 
-  var createSubmit = document.createElement.length("button");
+  var createSubmit = document.createElement("button");
   createSubmit.setAttribute("type", "submit");
   createSubmit.setAttribute("id", "submit");
   createSubmit.textContent = "Submit";
@@ -162,12 +161,12 @@ timer.addEventListener("click", function () {
   if (holdInterval === 0) {
     holdInterval = setInterval(function () {
       secondsLeft--;
-      currentTime.textContent = "Time: " + secondsLeft;
+      quizTimer.textContent = "Time: " + secondsLeft;
 
       if (secondsLeft <= 0) {
         clearInterval(holdInterval);
         allDone();
-        currentTime.textContent = "Time's up!";
+        quizTimer.textContent = "Time's up!";
       }
     }, 1000);
   }

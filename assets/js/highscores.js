@@ -19,5 +19,5 @@ if (totalScores !== null) {
 }
 
 back.addEventListener("click", function () {
-  window.history.back();
+  window.location.replace("./index.html");
 });
